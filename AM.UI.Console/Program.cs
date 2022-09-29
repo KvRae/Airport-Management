@@ -11,9 +11,9 @@ Console.WriteLine(plane);
 
 Plane plane3 = new Plane() { Capacity = 100,ManufactureDate=DateTime.Now };
 
-Passenger passenger1 = new Passenger {FirstName="mohamed",LastName="kalech",EmailAddress="kalech@gmail.com"};
-bool b1 = passenger1.CheckProfile("mohamed", "kalech");
-bool b2 = passenger1.CheckProfile("mohamed", "kalech", "sqdqs");
+Passenger passenger1 = new Passenger {FirstName="foulen",LastName="fouleni",EmailAddress="foulen@gmail.com"};
+bool b1 = passenger1.CheckProfile("foulen", "fouleni");
+bool b2 = passenger1.CheckProfile("foulen", "fouleni", "fouleni@gmail.com");
 Console.WriteLine(b1);
 Console.WriteLine(b2);
 
