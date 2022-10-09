@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Domain
 {
-    public class Staff :Passenger
+    public class Staff : Passenger
     {
+        public string Function { get; set; }
         public DateTime EmployementDate { get; set; }
-        public String Function { get; set; }
-        public Double Salary { get; set; }
-
+        public float Salary { get; set; }
         public override void PassengerType()
         {
             base.PassengerType();
-            Console.WriteLine("im staff");
+            Console.WriteLine("and I'm a staff member");
         }
-
     }
 }

@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Domain
 {
-    public class Traveller:Passenger
+    public class Traveller : Passenger
     {
-        public String HealthInformation { get; set; }
-        public String Nationality { get; set; }
+        public string HealthInformation { get; set; }
+        public string Nationality { get; set; }
 
         public override void PassengerType()
         {
             base.PassengerType();
-            Console.WriteLine("im traveller");
+            Console.WriteLine("and I'm a traveller");
         }
-
     }
 }

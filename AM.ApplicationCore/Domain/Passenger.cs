@@ -8,39 +8,41 @@ namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
+        public string PassportNumber { get; set; }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
         public DateTime BirthDate { get; set; }
-        public String PassportNumber { get; set; }
-        public String EmailAddress { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
-        public String TelNumber { get; set; }
+        public int? TelNumber { get; set; }
+        public string? EmailAddress { get; set; }
 
-        public ICollection<Flight> Flights { get; set; }
+        public virtual List<Flight> Flights { get; set; }
 
-        
-
-        public bool CheckProfile(String FirstName, String lastName,String Email=null)
+        public override string ToString()
         {
-            if (Email == null)
-              {
-                return (this.FirstName == FirstName && LastName == lastName);
-
-              }
+            return "FirstName: " + FirstName + " LastName: " + LastName + " date of Birth: " + BirthDate;
+        }
+        //Le polymorphisme par signature
+        //public bool CheckProfile(string firstName, string lastName)
+        // {
+        //     return FirstName==firstName && LastName==lastName;
+        // }
+        // public bool CheckProfile(string firstName, string lastName, string email)
+        // {
+        //     return FirstName==firstName && LastName==lastName && EmailAddress==email;
+        // }
+        public bool CheckProfile(string firstName, string lastName, string email = null)
+        {
+            if (email != null)
+                return FirstName == firstName && LastName == lastName && EmailAddress == email;
             else
-            {
-                return (this.FirstName == FirstName && LastName == lastName && EmailAddress == Email);
-
-            }
-
-           
+                return FirstName == firstName && LastName == lastName;
         }
-
-        public virtual void PassengerType ()
+        // Polymorphisme par héritge
+        public virtual void PassengerType()
         {
-            Console.WriteLine("I'am a passenger");
-
+            Console.WriteLine("I am a Passenger");
         }
-
-
     }
 }
